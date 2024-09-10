@@ -1,21 +1,24 @@
 <header class="bg-white">
-    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
-      <div class="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between">
-        <div>
-          <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">Blog Posts</h1>
-  
-          <p class="mt-1.5 text-sm text-gray-500">
-            Write, Read and Share your Knowledge.
-          </p>
-        </div>
-  
-        <div class="flex items-center gap-4">
-        <a href="{% url 'login' %}"> <button
+  <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+    <div
+      class="flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between"
+    >
+      <div>
+        <h1 class="text-2xl font-bold text-gray-900 sm:text-3xl">Blog Posts</h1>
+
+        <p class="mt-1.5 text-sm text-gray-500">
+          Write, Read and Share your Knowledge.
+        </p>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="{% url 'login' %}">
+          <button
             class="inline-flex items-center justify-center gap-1.5 rounded border border-gray-200 bg-white px-5 py-3 text-gray-900 transition hover:text-gray-700 focus:outline-none focus:ring"
             type="button"
           >
             <span class="text-sm font-medium"> Login </span>
-  
+
             <svg
               xmlns="http://www.w3.org/2000/svg"
               class="size-4"
@@ -31,15 +34,15 @@
               />
             </svg>
           </button>
-        </a> 
-  
-          <button
-            class="inline-block rounded bg-indigo-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring"
-            type="button"
-          >
-            Create Post
-          </button>
-        </div>
+        </a>
+
+        <button
+          class="inline-block rounded bg-indigo-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-indigo-700 focus:outline-none focus:ring"
+          type="button"
+        >
+          Create Post
+        </button>
       </div>
     </div>
-  </header>
+  </div>
+</header>
