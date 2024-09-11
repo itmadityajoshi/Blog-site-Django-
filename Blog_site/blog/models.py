@@ -25,3 +25,15 @@ class Post(models.Model):
     def __str__(self):
         return self.title
     
+class Comment(models.Model):
+    post = models.ForeignKey(Post, related_name="comments", on_delete=models.CASCADE)
+    name = models.CharField(max_length=80)
+    comment_body = models.TextField()
+    post_date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['post_date']
+
+    def __str__(self):
+        return self.name
+    

@@ -9,3 +9,10 @@ class PostAdmin(admin.ModelAdmin):
     search_fields = ['title', 'content']
     prepopulated_fields = {'slug': ('title',)}
 admin.site.register(Post,PostAdmin)
+
+
+class CommentAdmin(admin.ModelAdmin):
+    list_display =('name', 'post', 'post_date')
+    list_filter = ('post_date',)
+    search_fields = ['name','post_body']
+admin.site.register(Comment, CommentAdmin)

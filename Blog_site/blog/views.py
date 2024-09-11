@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-from .models import Post
+from .models import Post, Comment
 
 
 
@@ -21,7 +21,7 @@ def login_view(request):
         password = request.POST['password']
 
         user = authenticate(request, username=email, password=password)
-        print(user)
+  
         if user is not None:
             login(request,user)
             return redirect('/')
@@ -54,5 +54,15 @@ def register_view(request):
 
 
 def logout_view(request):
-    
-    return redirect('login')
+    logout(request)
+    return redirect('/')
+
+
+def post_detail(request,id):
+
+    comment = Comment.objects.all()
+
+    post = Post.objects.filter(id=id)
+    context = {'post': post,
+               'comment': comment,}
+    return render(request, 'singleContent.html', context) 
